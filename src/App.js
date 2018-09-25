@@ -12,7 +12,7 @@ class App extends Component {
     passport.use(new Strategy({
       clientID: BNET_ID,
       clientSecret: BNET_SECRET,
-      callbackURL: "http://localhost:8080/",
+      callbackURL: "https://unruffled-fermi-87364b.netlify.com/",
       region: "us"
     }))
   }
