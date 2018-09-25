@@ -14,7 +14,9 @@ class App extends Component {
       clientSecret: BNET_SECRET,
       callbackURL: "https://unruffled-fermi-87364b.netlify.com/",
       region: "us"
-    }))
+    }, function (accessToken, refreshToken, profile, done) {
+      return done(null, profile);
+    }));
   }
 
   render() {
