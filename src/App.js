@@ -19,13 +19,13 @@ class App extends Component {
         return done(null, profile);
     }));
     
-    axios.get('https://us.battle.net/oauth/authorize',
+    axios.get('/auth/bnet',
     passport.authenticate('bnet'))
     .then(function (response){
       console.log(response);
     });
 
-    axios.get('https://us.battle.net/oauth/authorize',
+    axios.get('/auth/bnet/callback',
     passport.authenticate('bnet', { failureRedirect: '/' }),
     function(req, res){
         res.redirect('/');
