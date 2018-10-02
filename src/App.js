@@ -13,7 +13,7 @@ class App extends Component {
     passport.use(new BnetStrategy({
       clientID: BNET_ID,
       clientSecret: BNET_SECRET,
-      callbackURL: "http://localhost:8080/",
+      callbackURL: "https://naughty-archimedes-72c310.netlify.com/",
       region: "us"
     }, function (accessToken, refreshToken, profile, done) {
         return done(null, profile);
@@ -25,10 +25,10 @@ class App extends Component {
       console.log(response);
     });
 
-    axios.get('http://localhost:8080/',
-    passport.authenticate('bnet', { failureRedirect: 'http://localhost:8080/' }),
+    axios.get('https://us.battle.net/oauth/authorize',
+    passport.authenticate('bnet', { failureRedirect: '/' }),
     function(req, res){
-        res.redirect('http://localhost:8080/');
+        res.redirect('/');
         console.log(req, res);
     });
 
