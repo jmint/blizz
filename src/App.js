@@ -20,7 +20,7 @@ class App extends Component {
         return done(null, profile);
     }));
     
-    axios.get('/',
+    axios.get('https://us.battle.net/oauth/authorize',
     passport.authenticate('bnet'))
     .then(function (response){
       console.log(response);
