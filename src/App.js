@@ -16,6 +16,7 @@ class App extends Component {
       callbackURL: "https://naughty-archimedes-72c310.netlify.com/",
       region: "us"
     }, function (accessToken, refreshToken, profile, done) {
+        console.log(profile, "profile")
         return done(null, profile);
     }));
     
