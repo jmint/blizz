@@ -20,13 +20,13 @@ class App extends Component {
         return done(null, profile);
     }));
     
-    axios.get('/auth/bnet',
+    axios.get('/',
     passport.authenticate('bnet'))
     .then(function (response){
       console.log(response);
     });
 
-    axios.get('/auth/bnet/callback',
+    axios.get('/',
     passport.authenticate('bnet', { failureRedirect: '/' }),
     function(req, res){
         res.redirect('/');
